@@ -5,6 +5,9 @@ const { checkIfIsAdmin } = require('../utils/checkIfIsAdmin.js');
 const { getProducts, getProductById, postProduct, PutProduct, deleteProduct,getByCategory } = require('../controllers/products.js');
 
 const routerProducts = express.Router();
+
+// http://localhost:8080/api/productos/?admin=1 postman
+
 routerProducts.use(checkIfIsAdmin)
 
 routerProducts.get('/', getProducts);
